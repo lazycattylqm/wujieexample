@@ -1,12 +1,14 @@
 <template>
   <VueSub />
+  <ReactSub />
 </template>
 
 <script>
 import VueSub from './VueSub.vue';
+import ReactSub from './ReactSub.vue';
 export default {
   name: "HelloWorld",
-  components: { VueSub }
+  components: { VueSub, ReactSub }
 }
 </script>
 
