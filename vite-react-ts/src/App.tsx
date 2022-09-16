@@ -1,15 +1,21 @@
-import { useState, useRef } from 'react';
-import reactLogo from './assets/react.svg';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
-import Father from './components/Father';
-import Ancestor from './components/Ancestor';
+import { RecoilRoot } from 'recoil';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const nav = useNavigate();
+  const toShow = () => {
+    nav('/show');
+  };
 
+  const toAns = () => {
+    nav('/ans');
+  };
   return (
     <div className="App">
-      <Ancestor />
+      <div onClick={toShow}>go to show</div>
+      <div onClick={toAns}>go to ans</div>
+      <h1>Hello</h1>
     </div>
   );
 }

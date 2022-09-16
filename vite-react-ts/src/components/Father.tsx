@@ -1,12 +1,12 @@
-import { useEffect, useContext } from 'react';
-import { ContextWrapper } from '../context/counterContext';
+import { useRecoilState } from 'recoil';
+import { counterState } from '../recoil/atom';
 import Child from './Child';
 const Father = () => {
-  const { store } = useContext(ContextWrapper);
+  const [counter] = useRecoilState(counterState);
   return (
     <div>
       <h1>Father</h1>
-      <div>{store.count}</div>
+      <div>{counter}</div>
       <Child />
     </div>
   );

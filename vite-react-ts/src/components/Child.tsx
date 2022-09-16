@@ -1,27 +1,23 @@
-import { useContext } from 'react';
-import { ContextWrapper } from '../context/counterContext';
-import { counter } from './Counter';
+import { useRecoilState } from 'recoil';
+import { counterState } from '../recoil/atom';
 
 const Child = () => {
-  const { store, dispatch } = useContext(ContextWrapper);
-
+  const [counter, setCounter] = useRecoilState(counterState);
   return (
     <div>
       <h1>Child</h1>
-      {store.count}
+      {counter}
       <div>
         <button
           onClick={() => {
-            dispatch('increment');
-            counter.increment();
+            setCounter(counter + 1);
           }}
         >
           +
         </button>
         <button
           onClick={() => {
-            dispatch('decrement');
-            counter.decrement();
+            setCounter(counter - 1);
           }}
         >
           -

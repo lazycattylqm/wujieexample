@@ -1,32 +1,36 @@
-import { useEffect, useReducer, useState } from 'react';
-import { ContextWrapper, context, reducer } from '../context/counterContext';
 import Father from './Father';
-import { counter } from './Counter';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilSnapshot, useRecoilState, useRecoilValue } from 'recoil';
+import { counterState, countSelector } from '../recoil/atom';
+import { useEffect, useState } from 'react';
 
 const Ancestor = () => {
-  const [store, dispatch] = useReducer(reducer, context);
-  const [num, setNum] = useState(1);
-
+  const counter = useRecoilValue(counterState);
+  const [count, setCount] = useState(counter);
+  const snapshot = useRecoilSnapshot();
   useEffect(() => {
+    console.log('ancestor', counter);
     return () => {
-      console.log('ancestor unmount', counter.get());
+      console.log('ancestor unmount', count, snapshot);
     };
-  }, [num]);
-
+  }, []);
+  useEffect(() => {
+    console.log('set effect ancestor', counter, snapshot);
+    setCount(counter);
+  }, [counter]);
+  const nav = useNavigate();
   return (
     <>
-      <h1>Ance</h1>
-      <button
+      <div
         onClick={() => {
-          setNum(num + 1);
+          nav('/');
         }}
       >
-        unmont by num
-      </button>
-      <div>{num}</div>
-      <ContextWrapper.Provider value={{ store, dispatch }}>
-        <Father />
-      </ContextWrapper.Provider>
+        back
+      </div>
+      <h1>Ance</h1>
+      <div>{counter}</div>
+      <Father />
     </>
   );
 };
