@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import VueSub from './component/VueSub';
 
-function App() {
+function App () {
   return (
     <div className="App">
+      <VueSub />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

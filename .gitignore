@@ -1,3 +1,5 @@
 /**/node_modules/**
 /**/*lock.yaml
 /**/*lock.json
+/**/yarn.lock
+vue_main/vue_main/yarn.lock
