@@ -8,10 +8,13 @@ const Ancestor = () => {
   const counter = useRecoilValue(counterState);
   const [count, setCount] = useState(counter);
   const snapshot = useRecoilSnapshot();
+  const printCount = () => {
+    console.log('count', counter);
+  };
   useEffect(() => {
     console.log('ancestor', counter);
     return () => {
-      console.log('ancestor unmount', count, snapshot);
+      printCount();
     };
   }, []);
   useEffect(() => {
