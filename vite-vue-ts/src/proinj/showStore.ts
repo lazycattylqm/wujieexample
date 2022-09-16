@@ -1,19 +1,26 @@
 import { reactive } from "vue";
 
-export const show = reactive({
+const show = reactive({
   count: 0,
   name: "show",
 })
 
-export const changeShow = (name: string) => {
+const changeShow = (name: string) => {
   show.name = name
 }
 
-export const increment = () => {
+const increment = () => {
   show.count++
 }
 
-export const reset = () => {
+const reset = () => {
   show.count = 0
   show.name = 'show'
+}
+
+export default {
+  show,
+  changeShow,
+  increment,
+  reset
 }
