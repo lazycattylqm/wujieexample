@@ -1,8 +1,7 @@
-import { createBrowserRouter, Route } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import Ancestor from '../components/Ancestor';
 import Show from '../components/Show';
-import * as React from 'react';
 export const route = createBrowserRouter([
   {
     path: '/show',

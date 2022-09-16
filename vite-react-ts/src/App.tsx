@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-import { RecoilRoot } from 'recoil';
 
 function App() {
   const nav = useNavigate();

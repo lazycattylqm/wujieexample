@@ -1,7 +1,7 @@
 import Father from './Father';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilSnapshot, useRecoilState, useRecoilValue } from 'recoil';
-import { counterState, countSelector } from '../recoil/atom';
+import { useRecoilSnapshot, useRecoilValue } from 'recoil';
+import { counterState } from '../recoil/atom';
 import { useEffect, useState } from 'react';
 
 const Ancestor = () => {
