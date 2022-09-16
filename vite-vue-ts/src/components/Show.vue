@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1>show</h1>
-    <div>name is {{show.name}} and count is {{show.count}}</div>
-    <AnotherChild />
-  </div>
+  <h1>show</h1>
+  <div>name is {{show.name}} and count is {{show.count}}</div>
+  <AnotherChild />
 </template>
 
 <script lang="ts" setup>

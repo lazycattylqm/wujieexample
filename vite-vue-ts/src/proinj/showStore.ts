@@ -15,4 +15,5 @@ export const increment = () => {
 
 export const reset = () => {
   show.count = 0
+  show.name = 'show'
 }
