@@ -5,11 +5,15 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import { route } from './routes';
 import { RecoilRoot } from 'recoil';
+import store from './reducer_store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <RouterProvider router={route} />
-    </RecoilRoot>
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <RecoilRoot>
+        <RouterProvider router={route} />
+      </RecoilRoot>
+    </React.StrictMode>
+  </Provider>
 );
