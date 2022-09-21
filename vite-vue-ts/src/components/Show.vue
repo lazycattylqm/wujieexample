@@ -12,6 +12,6 @@ provide('show', { ...showStore });
 const { show } = showStore;
 onUnmounted(() => {
   console.log('show unmounted', 'name is', show.name, 'count is', show.count);
-  reset();
+  showStore.reset();
 });
 </script>

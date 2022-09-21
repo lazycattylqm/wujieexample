@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>ancestor</h1>
-    <div>count is: {{ store.count }}</div>
-    <div>double is {{store.doubleCount}}</div>
+    <div>count is: {{ store.count.count }}</div>
+    <div>double is {{store.doubleCount()}}</div>
     <Father />
   </div>
 </template>
