@@ -1,22 +1,25 @@
-import { defineStore } from "pinia"
-import { ref, reactive } from "vue"
+import { defineStore, storeToRefs } from "pinia"
+import { ref, reactive, computed } from "vue"
 
-export const useCounterStore = defineStore('counter', () =>{
+export const useCounterStore = defineStore('counter', () => {
   const count = reactive({
     count: 0
   })
-  const doubleCount = () => {
-    return count.count * 2
-  }
+  const doubleCount = computed(() => count.count * 2)
 
   const increment = () => {
     count.count++
   }
 
+  const $reset = () => {
+    count.count = 0
+  }
+
   return {
     count,
     doubleCount,
-    increment
+    increment,
+    $reset
   }
 
 });
